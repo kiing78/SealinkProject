@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<div align="center" th:object=${liste} th:each="navire : ${liste}">
+
+
+    <table>
+<tr>
+    <td>N° navire</td>
+    <td>Navire immatriculation</td>
+    <td> Navire nom </td>
+
+</tr>
+
+    <tr>
+
+        <td><label  th:text=${navire.getIdNavire()}></label></td>
+        <td><label  th:text=${navire.getNavireImmatriculation()}></label></td>
+        <td><label  th:text=${navire.getNavireNom()}></label></td>
+    </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ajouter une marchandise</title>
+</head>
+<body>
+<h1 align="center"> Ajout  d'une marchandise</h1>
+<form th:action="@{/sealink/marchandise/addMarchandise}" method="POST" th:object="${listeConteneur}" >
+
+
+   <input type="number" name="longueur" placeholder="Longueur"><br>
+    <input type="number" name="largeur" placeholder="Largeur"><br>
+    <input type="number" name="poids" placeholder="Poids"><br>
+    <input type="text" name="typologie" placeholder="Typologie"><br>
+    <input type="number" name="valeurMonetaire" placeholder="Valeur Monétaire"><br>
+
+    <div th:each="conteneur : ${listeConteneur}" >
+        <p th:text="${conteneur.getTransitaire()}"></p>
+    <p th:text="${conteneur.idConteneur}"></p>
+    </div>
+
+   *<textarea name="specification" placeholder="Specification"> </textarea>
+    <!--
+    <td><select name="conteneurTest" >
+        <option th:each="conteneur : ${listeConteneur}" th:value="${conteneur.idConteneur}" th:text="${test.idConteneur}"></option>
+    </select></td>-->
+
+
+
+    <input  class="btn-design" type="submit" value="Ajouter la marchandise">
+    <p id="textAjout">*Si vous voulez ajouter des informations qui sont necessaire à votre marchandise</p>
+
+</form>
+
+</body>
+</html>

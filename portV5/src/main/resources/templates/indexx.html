@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+
+   <!-- <link th:href="@{/css/style.css}" rel="stylesheet" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+</head>
+<body>
+<div class="p-3 mb-2 bg-primary text-white" height="30%">
+
+   <span> <img align="left" th:src="@{/img/logo_bateau.png}" width="5%" height="5%">
+       <h1>Sealink</h1></span>
+</div>
+
+<!--
+<div align="right">
+    Se connecter en tant que :
+    <a th:href="@{/sealink/authentification/sendToConnectTransitaire}">Transitaire</a>
+    <a th:href="@{/sealink/authentification/sendToConnectArmateur}">Armateur</a>
+</div>
+-->
+<div>
+    <img th:src="@{/img/new_background.png}" width="100%">
+</div>
+<div id="centre" align="center">
+    <form th:action="@{/sealink/demandeTrajet}" method="POST">
+        <div class="input-group input-group-sm mb-3 w-25 p-3">
+            <label class="input-group-text" for="inputGroupSelect01">Port de Depart</label>
+            <select class="form-select" id="inputGroupSelect01" name="portDepart">
+                <option selected>...</option>
+                <option value="marseille">Marseille</option>
+                <option value="kelang">Kelang</option>
+                <option value="shanghai">Shanghai</option>
+                <option value="le_havre">Le havre</option>
+            </select>
+        </div>
+
+        <div class="input-group input-group-sm mb-3 w-25 p-3">
+            <label class="input-group-text" for="inputGroupSelect03">Conteneur</label>
+            <select class="form-select" id="inputGroupSelect03" name="conteneur">
+                <option selected>...</option>
+                <option value="20pieds">20 pieds</option>
+                <option value="40pieds">40 pieds</option>
+            </select>
+        </div>
+
+
+
+        <div class="input-group input-group-sm mb-3 w-25 p-3">
+            <label class="input-group-text" for="inputGroupSelect02">Destination</label>
+            <select class="form-select" id="inputGroupSelect02" name="destination">
+                <option selected>...</option>
+                <option value="marseille">Marseille</option>
+                <option value="kelang">Kelang</option>
+                <option value="shanghai">Shanghai</option>
+                <option value="le_havre">Le havre</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="marchandise">Nom Marchandise</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="marchandise">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="volume">Volume</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="volume">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="quantite">Quantite</span>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="quantite">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="specification">Spécification</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="specification">
+        </div>
+
+
+
+
+
+
+
+
+
+
+    <input type="submit" value="Valider"/>
+    </form>
+</div>
+
+
+</body>
+</html>

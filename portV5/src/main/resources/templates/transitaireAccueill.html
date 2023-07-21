@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr"  xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+test je suis dans transitaire
+    <form th:action="@{/sealink/demanderUnNavire}" method="GET">
+
+        <select name="portDepart" >
+            <option selected>Depart</option>
+            <option value="marseille">Marseille</option>
+            <option value="kelang">Kelang</option>
+            <option value="shanghai">Shanghai</option>
+            <option value="le_havre">Le havre</option>
+        </select>
+
+        <select name="tailleConteneur">
+            <option selected>conteneur</option>
+            <option value="20pieds">20 pieds</option>
+            <option value="40pieds">40 pieds</option>
+        </select>
+
+        <select name="destination">
+            <option selected>destination</option>
+            <option value="marseille">Marseille</option>
+            <option value="kelang">Kelang</option>
+            <option value="shanghai">Shanghai</option>
+            <option value="le_havre">Le havre</option>
+        </select>
+
+       <label for="depart">date depart:</label>
+        <input type="date" name="dateDepart" id="depart" min="2023-06-26">
+
+        <label for="arrivee">date arrivée prevu:</label>
+        <input type="date" name="dateArriveePrevue" id="arrivee" min="2023-07-01">
+
+
+        <input type="submit" value="Valider"/>
+
+    </form>
+
+
+</body>
+</html>

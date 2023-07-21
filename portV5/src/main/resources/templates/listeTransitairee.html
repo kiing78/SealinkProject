@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>liste transitaire</title>
+</head>
+<body>
+    <h1 align="center">liste transitaire</h1>
+<!--pour le foreach transitaire est mon objet
+ listeTransitaires = les attribus de mon objet-->
+    <!--Transitaire objet : liste -->
+<form th:action=@{/sealink/choixTrajet} method="POST" th:object=${listeTrajet} >
+    <div align="center" th:each="trajet : ${listeTrajet}">
+        <table>
+            <tr>
+                <td>N° Trajet</td>
+                <td>Port de départ</td>
+                <td>Destination</td>
+                <td>Transitaire Disponible</td>
+                <td>Conteneur disponible</td>
+
+
+            </tr>
+            <tr>
+                <td><label  th:text=${trajet.getIdTrajet()}></label></td>
+              <td><label  th:text=${trajet.portDepart.getPortNom()}></label></td>
+                <td><label th:text="${trajet.portArrivee.getPortNom()}"></label></td>
+                <td><label th:text="${trajet.transitaire.getNomEntreprise()}"></label></td>
+
+                <td><input type="radio" name="trajetId" th:value=${trajet.idTrajet}></td>
+
+
+            </tr>
+        </table>
+
+    </div>
+    <div align="center"><input type="submit" value="Choisir" ></div>
+
+
+</form>
+
+</body>
+</html>

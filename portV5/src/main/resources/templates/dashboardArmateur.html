@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>dashboard armateur</title>
+</head>
+<body>
+<h1 align="center">Dashboard Armateur</h1>
+<div align="center" th:object=${listeArmateur} th:each="armateur : ${listeArmateur}">
+  Vous êtes connecté en tant que
+
+  <label th:text="${armateur.nomArmateur}"></label>
+  <label th:text="${armateur.prenomArmateur}"></label><br>
+  votre entreprise est :
+  <label th:text="${armateur.nomEntrepriseArmateur}" ></label>
+</div>
+</body>
+</html>

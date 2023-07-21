@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>dashboard transitaire</title>
+</head>
+<body>
+<h1 align="center">Dashboard Transitaire</h1>
+<div align="center" th:object=${listeTransitaire} th:each="transitaire : ${listeTransitaire}">
+    Vous êtes connecté en tant que
+
+    <label th:text="${transitaire.nomTransitaire}"></label>
+    <label th:text="${transitaire.prenomTransitaire}"></label><br>
+    votre entreprise est :
+    <label th:text="${transitaire.nomEntreprise}" ></label>
+</div>
+</body>
+</html>
