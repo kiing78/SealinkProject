@@ -13,4 +13,4 @@ API : Stripe (web service de paiement)
 Langage : JAVA, HTML/CSS,JS
 
 
-** Note : ne pas oublié de créer/changer le nom de la BDD dans le fichier "resources/application.yml", ainsi que l'admin/password admin
+
